@@ -1,0 +1,129 @@
+ng-select {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    &, & * {
+        outline: none;
+        font-family: "AvenirNext" !important;
+        font-weight: 400 !important;
+    }
+    .placeholder {
+        display: none !important;
+    }
+    &:hover {
+        & + .placeholder.placeholderUp {
+            color: #72ba8a;
+        }
+    }
+    & > div {
+        border: 1px solid $dark1 !important;
+        border-radius: 4px !important;
+        padding: 15px 20px 11px !important;
+        transition: all .3s ease !important;
+        resize: none !important;
+        background: $white !important;
+        height: 50px !important;
+        width: 100% !important;
+        display: block !important;
+        position: relative !important;
+        &.open {
+            div.single {
+                & > div.toggle {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        & > div.single {
+            & > div.value {
+                position: absolute;
+                white-space: nowrap;
+                top: 14px;
+                left: 10px;
+                pointer-events: none;
+                user-select: none;
+                transition: all 0.2s ease;
+                padding: 0 10px;
+                color: $dark3;
+                font-size: 16px;
+                letter-spacing: 0.2px;
+                margin: 0;
+                line-height: normal !important;
+                height: auto;
+                font-weight: 400;
+                text-align: left;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            & > div.toggle {
+                text-indent: -1999px;
+                overflow: hidden;
+                width: 8px !important;
+                height: 8px !important;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                transition: all .3s ease;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgPHBhdGggZD0iTTAgMGg4djhIMHoiLz4gICAgPHBhdGggZmlsbD0iIzk1OTg5QSIgZD0iTTMuMDYxNzg5MSA2LjMyODY2NTU2Yy42MTUzNjgzNy45MjMwNTI1NiAxLjYxMjczODA3LjkyMzU2MTkgMi4yMjg0NDYgMGwxLjc3MTU1NC0yLjY1NzMzMWMuNjE1MzY4MzctLjkyMzA1MjU0LjIyNzUxNjY1LTEuNjcxMzM0NS0uODgzODc4MzUtMS42NzEzMzQ1aC00LjAwMzc5NzNjLTEuMTAzNTIwOSAwLTEuNDk5NTg2MjguNzQ3NzcyNi0uODgzODc4MzUgMS42NzEzMzQ1bDEuNzcxNTU0IDIuNjU3MzMxeiIvPiAgPC9nPjwvc3ZnPg==);
+                &:hover {
+                    background-color: transparent !important;
+                }
+            }
+        }
+        &:hover {
+            border-color: #72ba8a !important;
+        }
+    }
+}
+
+select-dropdown {
+    .filter {
+        @extend %visuallyhidden;
+    }
+    & > div {
+        max-width: 200px;
+        max-height: 200px;
+        top: 18px !important;
+        left: 20px !important;
+        z-index: 20 !important;
+        border: 0 !important;
+        background: #fff;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-shadow: 0 5px 20px 2px rgba(0,0,0,.12);
+        border-radius: 4px;
+        position: absolute !important;
+        .options {
+            max-height: 180px !important;
+            padding: 10px 0 5px;
+        }
+        .options ul li {
+            text-decoration: none;
+            display: block;
+            padding: 5px 19px !important;
+            font-weight: 500;
+            font-size: 15px;
+            color: #95989a;
+            letter-spacing: .2px;
+            text-align: left;
+            transition: all .3s ease;
+            background: transparent;
+            &.highlighted,
+            &:hover,
+            &.active,
+            &:focus {
+                background: transparent;
+                color: #72ba8a;
+            }
+        }
+    }
+}
+
+.inverted {
+    & select-dropdown {
+        & > div {
+            top: -175px!important;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.borderedGroup {
+    border: 1px solid $bright5;
+    border-radius: 4px;
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    position: relative;
+    &--item {
+        width: 100%;
+        float: left;
+        padding: 1px 20px;
+        position: relative;
+        float: left;
+        &:not(:last-child) {
+            border-bottom: 1px solid $bright3;
+        }
+    }
+    &--input {
+        width: 100%;
+        width: calc(100% - 26px);
+        display: inline-block;
+        padding: 13px 0;
+        &:before {
+            top: 13px !important;
+        }
+    }
+    &--icon {
+        margin-right: 10px;
+        float: left;
+        position: relative;
+        top: 16px;
+    }
+    &--placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(20px, -50%);
+        background-color: $white;
+        padding: 0 5px;
+        color: #B8DCC4;
+        line-height: 14px;
+        text-transform: uppercase;
+    }
+    &--counter {
+        padding: 5px 0;
+        float: right;
+        font-weight: 300;
+        font-size: 13px;
+        color: $bright4;
+        letter-spacing: 0.2px;
+    }
+}

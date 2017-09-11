@@ -1,0 +1,233 @@
+.btn {
+  outline: none;
+  border: 0;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  transition: all .25s ease-in-out;
+
+  @extend %fontBtn;
+
+
+  // button wrap
+  &--wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & + & {
+      margin-top: 40px;
+    }
+
+    // vertical align
+    &_row {
+      flex-direction: row;
+
+      .btn:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+
+    &_column {
+      flex-direction: column;
+
+      .btn:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    // horizontal align (default center)
+    &_left {
+      justify-content: flex-start;
+    }
+
+    &_right {
+      justify-content: flex-end;
+    }
+
+  }
+
+  // button sizes:
+  &_l {
+    padding: 16px 30px 14px;
+  }
+
+  &_s {
+    padding: 10px 14px 9px;
+  }
+
+  &_full {
+    width: 100%;
+  }
+
+  &_half {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &_white {
+      &.btn_stroke {
+          color: $white;
+          border-color: $white;
+      }
+      &:not(.btn_stroke) {
+          background-color: $white;
+          border: 1px solid $white;
+          &:hover {
+              box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.06);
+          }
+          &:active {
+              box-shadow: none!important;
+          }
+      }
+  }
+
+  &_link {
+    @extend %fontBtn_link;
+    background-color: transparent;
+    color: $dark1;
+
+    // styles for + icon
+    svg { position: relative; top: 2px; margin-right: 6px;}
+    path { fill: $dark1; transition: all .3s ease; }
+    rect { stroke: $bright3; transition: all .3s ease; }
+
+    &.active,
+    &:hover {
+      color: $dark3;
+
+      // styles for + icon
+      path { fill: $dark3; }
+      rect { stroke: $dark1; }
+    }
+
+    &:active {
+      color: $dark4;
+
+      // styles for + icon
+      path { fill: $dark4; }
+      rect { stroke: $dark2; }
+    }
+
+
+  }
+
+  &_stroke {
+    border-width: 1px;
+    border-style: solid;
+    background: transparent !important;
+  }
+
+  &_loadMore {
+      background-color: $bright2;
+      color: $dark1;
+      text-transform: none;
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      &:hover {
+          background-color: $bright3;
+          color: $dark2;
+      }
+      &:active {
+          color: $dark3;
+      }
+  }
+
+  // button states
+  &[disabled],
+  &_disabled {
+    cursor: default !important;
+    user-select: none;
+
+    &:not(.btn_link) {
+      background-color: $bright4 !important;
+      color: $white !important;
+      border-color: $bright4 !important;
+    }
+
+    &.btn_link {
+      color: $bright4;
+    }
+  }
+
+  .tooltip--trigger {
+      display: inline-block;
+  }
+
+  &_success {
+    background-color: $bright2 !important;
+    border: none !important;
+    pointer-events: none;
+    color: $dark3 !important;
+    font-weight: 600 !important;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      min-height: 16px;
+      max-width: 16px;
+      max-height: 16px;
+      top: 2px !important;
+    }
+  }
+
+  // if button contains icon
+  &_icon {
+    position: relative;
+    padding-right: 30px;
+
+    app-icon {
+      display: flex;
+      float: right;
+      margin-left: 10px;
+    }
+  }
+
+  &:not(&_icon) {
+    .icon {
+      position: relative;
+      top: -3px;
+      margin-right: 7px;
+    }
+  }
+
+  &_iconOnly {
+      border-radius: 0;
+      width: 16px;
+      height: 16px;
+      path {
+          transition: fill .3s ease;
+          fill: $dark1;
+      }
+      &:hover {
+          path {
+              fill: $dark3;
+          }
+      }
+  }
+}
+
+.fileContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.fileContainer [type=file] {
+  cursor: inherit;
+  display: block;
+  font-size: 999px;
+  filter: alpha(opacity=0);
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+}

@@ -1,0 +1,40 @@
+.linkBlock {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 4px;
+    background-color: $bright2;
+    padding: 20px;
+    text-decoration: none;
+    strong {
+        font-size: 16px;
+        color: $dark1;
+        letter-spacing: 0.2px;
+        line-height: 24px;
+        transition: all .3s ease;
+    }
+    app-icon {
+        display: flex;
+        /deep/ {
+            path {
+                fill: $dark1;
+                transition: all .3s ease;
+            }
+        }
+    }
+    &:hover {
+        app-icon {
+            /deep/ {
+                path {
+                    fill: $dark2;
+                }
+            }
+        }
+        strong {
+            color: $dark2;
+        }
+    }
+}

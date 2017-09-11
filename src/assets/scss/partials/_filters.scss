@@ -1,0 +1,70 @@
+.filters {
+    width: 100%;
+    text-align: right;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    z-index: $z-index-filters;
+    &--item {
+        float: left;
+        &:not(:last-child) {
+            margin-right: 17px;
+        }
+        &_separator {
+            padding-right: 20px;
+            position: relative;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0; right: 0;
+                width: 1px; height: 100%;
+                border-radius: 2px;
+                background-color: $bright3;
+            }
+        }
+        &-label {
+            display: block;
+            float: left;
+            margin-right: 5px;
+        }
+        &-iconGroup {
+            padding: 2px;
+            display: inline-block;
+            border-radius: 2px;
+            background-color: $bright2;
+            svg {
+                margin-right: 0;
+            }
+            .btn {
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .dropdown {
+        float: left;
+        display: block;
+        &--btn {
+            color: $dark1;
+            &.active,
+            &:hover {
+                color: $dark3;
+            }
+        }
+        &--container {
+            top: -24px;
+            left: -19px;
+            &.is-outOfViewport {
+                right: -19px;
+                left: auto;
+                li {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

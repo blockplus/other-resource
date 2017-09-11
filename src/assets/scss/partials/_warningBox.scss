@@ -1,0 +1,16 @@
+.wb { // warning box
+    background: $white;
+    background: rgba($warning, 0.04);
+    border: 1px solid rgba($warning, 0.16);
+    border-radius: $br;
+    padding: $spacing/2;
+    color: $dark1;
+    strong {
+        color: $warning;
+    }
+    * {
+        font-size: 12px;
+        letter-spacing: 0.2px;
+        line-height: 16px;
+    }
+}

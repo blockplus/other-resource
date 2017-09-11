@@ -1,0 +1,40 @@
+.loader {
+    &-circular {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: relative;
+        color: $guest3;
+        margin-right: 11px;
+        &:after, &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px;
+            animation: spinner-bubble 2.6s linear 0s infinite;
+            width: 4px;
+            height: 4px;
+            opacity: 0;
+        }
+        &:before{
+            animation: spinner-bubble 2.6s linear 4s infinite;
+        }
+    }
+}
+
+//======= Keyframes =======
+@keyframes spinner-bubble {
+  from{
+    width: 4px;
+    height: 4px;
+    opacity: .8;
+  }
+  to{
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+  }
+}

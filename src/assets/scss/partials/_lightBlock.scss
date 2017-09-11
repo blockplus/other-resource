@@ -1,0 +1,347 @@
+.lightBlock {
+    border-radius: 4px;
+    box-shadow: 0px 5px 20px 2px rgba(0,0,0,0.06);
+    overflow: hidden;
+    user-select: none;
+    transition: box-shadow .3s ease;
+    width: 100%;
+    float: left;
+    position: relative;
+    background-color: $white;
+    margin: 0 20px 20px 0;
+
+    &_quarter {
+        width: calc(25% - 20px);
+        margin: 10px;
+        min-width: 210px;
+        @media (min-width: 1340px) {
+            &:nth-child(4n+1) {clear:both}
+            &:nth-child(4n+4) {margin-right: 0;}
+        }
+    }
+
+    &_third {
+        width: calc(25% - 20px);
+        margin: 10px;
+        min-width: 210px;
+        @media (min-width: 1140px) {
+            &:nth-child(3n+1) {clear:both}
+            &:nth-child(3n+3) {margin-right: 0;}
+        }
+    }
+
+    &_half {
+        width: calc(50% - 20px);
+        margin: 10px;
+        min-width: 210px;
+        &:nth-child(odd)  { margin-right: 0;}
+        &:nth-child(even) { margin-left : 0;}
+    }
+
+    &_clickable {
+        cursor: pointer;
+    }
+    &_clickable:hover,
+    &.is-active {
+        box-shadow: 0px 5px 20px 2px rgba(0,0,0,0.12);
+    }
+
+    &.is-inactive {
+        box-shadow: none !important;
+        background-color: $bright2;
+        .lightBlock--content {
+            background-color: transparent;
+        }
+    }
+
+    // TODO: refactor this
+    &_full {
+        min-width: 98.4%;
+        .lightBlock--content {
+            padding: 27px 20px 14px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .lightBlock--content-left,
+            .lightBlock--content-right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &--wrapper {
+        float: left;
+        float: left;
+        width: calc(100% + 20px);
+        display: flex;
+        margin: -10px;
+        flex-wrap: wrap;
+    }
+
+    &--header {
+        background-color: $white;
+        box-shadow: 0px 5px 20px 2px rgba(0,0,0,0.05);
+        padding: 20px 10px 20px 20px;
+        position: relative;
+        color: $dark3;
+        display: flex;
+        align-items: flex-start;
+        //@extend .heading3;
+        .input-cr  {
+            width: auto;
+        }
+    }
+
+    &--content {
+        padding: 20px;
+        background-color: $white;
+        font-size: 15px;
+        color: $dark3;
+        line-height: 24px;
+        overflow: hidden;
+        // TODO: Only found &_table on marketing page. Fix this
+        &_table {
+            padding: 21px 20px 20px 20px;
+        }
+        &-right {
+            position: absolute;
+            right: 21px;
+            bottom: 31px;
+        }
+    }
+
+    &_numbers {
+        .lightBlock--content {
+            font-size: 50px;
+            font-weight: 200;
+            line-height: 1;
+            color: #31383E;
+            padding-top: 30px;
+            padding-bottom: 24px;
+            small {
+                font-weight: 500;
+                font-size: 11px;
+                color: $dark1;
+                letter-spacing: 0.8px;
+                line-height: 14px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .table {
+        &--row {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            font-weight: 600;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+        &--col {
+            font-size: 11px;
+            letter-spacing: 0.8px;
+            line-height: 14px;
+        }
+        &--label {
+            color: $dark3;
+        }
+        &--value {
+            color: $dark1;
+        }
+    }
+    // TODO: fix strong & span usage
+    // TODO: remove btn_s and add footer-specific class
+    &--footer {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.8px;
+        line-height: 14px;
+        padding: 0 20px 20px;
+        strong {
+            color: $dark3;
+        }
+        span {
+            color: $dark1;
+        }
+        .btn_s {
+            padding-top: 13px;
+            padding-bottom: 11px;
+        }
+    }
+    // TODO: Only used for Survey and Dashboard tables. Remove this and fix tables there
+    &--table {
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        color: $dark3;
+        font-size: 12px;
+        text-transform: uppercase;
+        max-width: 225px;
+        width: 100%;
+        float: left;
+        padding-left: 9px;
+        padding-top: 7px;
+        flex: 1 0 225px;
+        tbody {
+            display: block;
+            float: left;
+            width: 100%;
+        }
+        tr {
+            width: 100%;
+            clear: both;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+        td {
+            display: block;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.8px;
+            line-height: 14px;
+            &:not(.lightBlock--table-greyText) {
+                color: $dark3;
+                max-width: 120px;
+                width: 100%;
+                margin-right: 40px;
+            }
+        }
+        &-greyText {
+            color: $dark1;
+            width: 65px;
+        }
+        &-greenText {
+            color: $guest3;
+        }
+    }
+
+    .input-cr {
+        &--state {
+            left: -10px;
+            opacity: 0;
+            transition: all .3s ease-in;
+        }
+        &--text {
+            left: -26px;
+            transition: left .4s ease, color .3s ease;
+            position: relative;
+            &:hover {
+                &, mark {
+                    color: $guest3 !important;
+                }
+            }
+        }
+        &--icon {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &.is-checked,
+    &:hover, &.active {
+        .input-cr {
+            &--state {
+                left: 0;
+                opacity: 1;
+            }
+            &--text {
+                left: 0;
+            }
+        }
+    }
+    // TODO: Merge this with single dropdown.scss element
+    &--dd {
+        padding: 20px;
+        cursor: default;
+        &-wrapper {
+            z-index: 30;
+            display: none;
+            max-width: 200px;
+            width: 100%;
+            background: $white;
+            box-shadow: 0px 5px 20px 2px rgba(0,0,0,0.12);
+            border-radius: 4px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+        &-item {
+            font-weight: 500;
+            font-size: 15px;
+            color: $dark1;
+            outline: none;
+            transition: color .3s ease;
+            cursor: pointer;
+            &:hover {
+                color: $dark3;
+            }
+        }
+        &-icon {
+            outline: none;
+            cursor: pointer;
+            margin: 0;
+            display: block;
+            width: 16px;
+            height: 16px;
+            path {
+                transition: fill .3s ease;
+                fill: $dark1;
+            }
+            &:hover {
+                path {
+                    fill: $dark3;
+                }
+            }
+            &-wrapper {
+                position: absolute;
+                top: 22px;
+                right: 22px;
+            }
+        }
+    }
+    // TODO: used only on dashboard. remove & fix
+    &--innerblocks {
+        font-size: 50px;
+        font-weight: 200;
+        line-height: 1;
+        color: #31383e;
+        max-width: 130px;
+        width: 100%;
+        float: left;
+        flex: 1 0 130px;
+        .subtext {
+            font-size: 11px;
+            color: $dark1;
+            display: block;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+    }
+
+}

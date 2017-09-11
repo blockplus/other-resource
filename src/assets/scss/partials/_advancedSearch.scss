@@ -1,0 +1,74 @@
+.advancedSearch {
+    background-color: $bright2;
+    border-radius: 4px;
+    padding: 20px;
+    width: 100%;
+    float: left;
+    &--item {
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    &--tag {
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        line-height: 16px;
+        padding: 5px 2px 5px 5px;
+        border-radius: 2px;
+        background-color: $white;
+        margin: 0 5px;
+        transition: box-shadow .2s ease;
+        &-remove {
+            display: inline;
+            app-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 16px;
+                height: 16px;
+                margin-left: 2px;
+                border-radius: 2px;
+                background-color: $bright2;
+            }
+            .icon-close {
+                width: 8px;
+                height: 8px;
+                top: 0;
+                position: static;
+                margin: 0;
+            }
+        }
+        &-input {
+            min-width: 65px;
+            max-width: 130px;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            white-space: nowrap;
+            position: relative;
+        }
+        &.is-active {
+            box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.06);
+        }
+        & + .advancedSearch--tag {
+            margin-left: 0;
+        }
+    }
+    .heading3 {
+        width: 100%;
+        float: left;
+        clear: both;
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    .row {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

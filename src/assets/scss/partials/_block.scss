@@ -1,0 +1,114 @@
+%block {
+    width: 100%;
+    float: left;
+    background: $white;
+    box-shadow: 0px 5px 20px 2px rgba($black, .06);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+%block_hover {
+    transition: box-shadow .3s ease;
+    &:hover {
+        box-shadow: 0px 5px 20px 2px rgba($black, .12);
+    }
+}
+
+%block_inactive {
+    box-shadow: none;
+    background-color: $bright2;
+    &:hover {
+        box-shadow: none;
+    }
+}
+
+%block_half {
+    max-width: calc(50% - 10px);
+    float: left;
+    &:nth-child(odd) {
+        margin-right: 20px;
+    }
+    &:last-child,
+    &:nth-last-child(2) {
+        &, .input-cr {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.block {
+    &_cr {
+        app-checkbox {
+            width: 100%;
+            display: block;
+        }
+        .input-cr {
+            @extend %block;
+            @extend %block_hover;
+            &--text {
+                font-weight: 400;
+                letter-spacing: 0.2px;
+                line-height: 24px;
+            }
+        }
+        &_icon {
+            position: relative;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: flex-start;
+            .input-cr--text {
+                margin-left: 36px;
+            }
+            &--icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(46px, 24px);
+            }
+        }
+    }
+    &_half {
+        @extend %block_half;
+    }
+    &.is-inactive {
+        &.block_cr {
+            .input-cr {
+                @extend %block_inactive;
+            }
+        }
+    }
+    &_lang {
+        @extend %block;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        position: relative;
+        &.is-inactive {
+            @extend %block_inactive;
+        }
+        .flag {
+            margin-right: 10px;
+        }
+    }
+    &_icon {
+        @extend %block;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        &.is-inactive {
+            @extend %block_inactive;
+        }
+        .block--icon {
+            margin-right: 10px;
+            width: 32px;
+            height: 32px;
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.progressState {
+    overflow: hidden;
+    &--text {
+        float: right;
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.8px;
+        line-height: 14px;
+        font-weight: 500;
+        margin-top: 10px;
+        clear: both;
+    }
+}
+
+.icon-progressState {
+    clear: both;
+    float: right;
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+}

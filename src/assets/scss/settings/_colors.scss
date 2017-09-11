@@ -1,0 +1,66 @@
+// Core colours:
+
+$bright1: rgb(255, 255, 255);
+$bright2: rgb(248, 248, 248);
+$bright3: rgb(233, 234, 234);
+$bright4: rgb(212, 214, 214);
+$bright5: rgb(170, 173, 174);
+
+$dark1: rgb(149, 152, 154);
+$dark2: rgb(86, 90, 93);
+$dark3: rgb(44, 50, 53);
+$dark4: rgb(35, 40, 42);
+$dark5: rgb(22, 25, 26);
+
+// Product colours
+
+$airfy1: rgb(175, 205, 219);
+$airfy2: rgb(127, 175, 197);
+$airfy3: rgb(96, 155, 183);
+$airfy4: rgb(76, 124, 146);
+$airfy5: rgb(48, 77, 91);
+
+$guest1: rgb(184, 220, 196);
+$guest2: rgb(142, 199, 161);
+$guest3: rgb(114, 186, 138);
+$guest4: rgb(91, 148, 110);
+$guest5: rgb(57, 93, 69);
+
+$home1: rgb(194, 191, 221);
+$home2: rgb(157, 152, 200);
+$home3: rgb(133, 127, 187);
+$home4: rgb(106, 101, 149);
+$home5: rgb(66, 63, 93);
+
+$things1: rgb(228, 199, 185);
+$things2: rgb(211, 166, 143);
+$things3: rgb(201, 144, 116);
+$things4: rgb(160, 115, 92);
+$things5: rgb(100, 72, 58);
+
+$partner1: rgb(235, 232, 196);
+$partner2: rgb(223, 219, 161);
+$partner3: rgb(216, 210, 138);
+$partner4: rgb(171, 168, 110);
+$partner5: rgb(108, 105, 69);
+
+$enterprise1: $partner1;
+$enterprise2: $partner2;
+$enterprise3: $partner3;
+$enterprise4: $partner4;
+$enterprise5: $partner5;
+
+// Interface colours
+
+$error: rgb(165, 55, 55);
+$warning: rgb(194, 173, 45);
+$success: rgb(40, 142, 91);
+$orange: rgb(194, 133, 54);
+
+$feedbackItemIconRed: rgb(196, 75, 73);
+$feedbackItemIconGreen: rgb(68, 184, 90);
+$feedbackItemIconGrey: $dark1; 
+
+// Common colours
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);

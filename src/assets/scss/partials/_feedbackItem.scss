@@ -1,0 +1,99 @@
+.feedbackItem {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px 2px rgba(0,0,0,0.06);
+    border-radius: 4px;
+    padding: 18px 10px 13px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+    &_half {
+        width: calc(50% - 10px);
+    }
+    &_full {
+        width: 100%;
+    }
+    &:nth-child(even) {
+        margin-right: 20px;
+    }
+    &--header {
+        width: 100%;
+        float: left;
+        padding: 0 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        .paragraph {
+            color: $dark1;
+            margin-left: 10px;
+            line-height: 1;
+        }
+        &-icon {
+            margin-right: 10px;
+            display: flex;
+        }
+    }
+    &--content {
+        width: 100%;
+        min-height: 60px;
+        float: left;
+        background-color: $bright2;
+        border-radius: 4px;
+        padding: 10px;
+        font-weight: 400;
+        font-size: 13px;
+        color: $dark3;
+        letter-spacing: 0.2px;
+        line-height: 20px;
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &--footer {
+        width: 100%;
+        height: 32px;
+        float: left;
+        padding: 4px 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        &-date {
+            font-size: 11px;
+            color: $dark1;
+            letter-spacing: 0.8px;
+            line-height: 14px;
+        }
+    }
+    &--messages {
+        &-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            color: $dark1;
+            fill: $dark1;
+            &:hover {
+                color: $dark3;
+                fill: $dark3;
+            }
+        }
+        &-text {
+            color: inherit;
+            font-size: 11px;
+            letter-spacing: 0.8px;
+            line-height: 14px;
+            transition: color .3s ease;
+        }
+        &-icon {
+            display: flex;
+            path {
+                fill: inherit;
+                transition: fill .3s ease;
+            }
+        }
+    }
+}

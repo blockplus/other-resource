@@ -1,0 +1,32 @@
+.demoAccount {
+    &--headline {
+        padding: 5px 10px;
+        background: #C3852C;
+        box-shadow: 0 5px 20px 2px rgba(0,0,0,0.06);
+        border-radius: 4px;
+        position: fixed;
+        top: 8px; left: calc(50% - 60px);
+        transform: translateX(-50%);
+        z-index: $z-index-demoHeadline;
+        & > * {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+        span {
+            font-size: 13px;
+            color: $white;
+            letter-spacing: 0.2px;
+            line-height: 24px;
+        }
+        .btn_link {
+            font-size: 13px;
+            color: rgba($white, .64);
+            letter-spacing: 0.2px;
+            line-height: 24px;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}

@@ -1,0 +1,223 @@
+// workaround for bouncing scroll on mac
+html {
+	overflow: hidden;
+	height: 100%;
+}
+body {
+	overflow: auto;
+	height: 100%;
+	user-select: none;
+	cursor: default;
+	&.body {
+		&_adminWrap {
+			padding: 60px 4px 4px;
+			.header {
+				top: 60px;
+				width: calc(100vw - 68px);
+			}
+			.sideNav {
+				overflow: hidden;
+				max-height: calc(100vh - 64px);
+			}
+		}
+	}
+}
+.app-wrapper {
+	overflow: hidden;
+	min-width: 100%;
+	min-height: 100%;
+	width: 100%;
+	background-color: $white;
+}
+.right-section {
+	position: relative;
+	display: flex;
+	float: left;
+	padding-top: 50px; // height of fixed header
+	padding-left: 60px; // width of fixed side-nav
+	width: 100%;
+	max-width: 1440px;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.section-container {
+	float: left;
+	width: 100%;
+	max-height: 100%;
+	border-radius: 4px;
+	background-color: $white;
+	box-shadow: 0 5px 20px 2px rgba(0,0,0,0.06);
+	@include bp(ipad-portrait) {
+		&--wrap {
+			flex-direction: column;
+			padding: 0 20px;
+			&_full,
+			&_l,
+			&_s,
+			&_xl,
+			&_xs {
+				margin-bottom: 20px;
+				min-width: 100%;
+				flex: 0 0 100%;
+			}
+		}
+	}
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	&_empty {
+		background-color: $bright2;
+		box-shadow: none;
+	}
+	&--wrap {
+		display: flex;
+		padding: 0 100px 40px 40px;
+		max-width: 1380px;
+		width: 100%;
+		flex: 1 1 100%;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		@extend %workinprogress;
+		@include bp(ipad) {
+			padding-right: 40px;
+		}
+		&-left {
+			min-width: 300px;
+			max-width: 100%;
+			width: 100%;
+			@extend %workinprogress;
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+		&-right {
+			max-width: 400px;
+			width: 100%;
+			@extend %workinprogress;
+		}
+		&_full {
+			max-width: 100%;
+		}
+		&_half {
+			max-width: 50%;
+		}
+		&_l {
+			max-width: 820px;
+		}
+		&_xl {
+			max-width: 988px;
+		}
+		&_s {
+			max-width: 400px;
+		}
+		&_xs {
+			overflow: hidden;
+			max-width: 232px;
+		}
+	}
+	&--title {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		width: 100%;
+		float: left;
+		&_outside {
+			margin: 20px 0 25px !important;
+			padding-right: 100px;
+			padding-left: 40px;
+			.section-container & {
+				padding: 0;
+			}
+			.filters {
+				margin: 0 !important;
+			}
+		}
+		&:first-child {
+			margin: 5px 0 25px;
+		}
+		&:not(:first-child) {
+			margin: 47px 0 25px;
+		}
+		&_left {
+			float: left;
+			display: flex;
+			align-items: flex-end;
+			& > :not(:first-child) {
+				margin-left: 10px;
+			}
+		}
+		&_right {
+			margin-left: auto;
+			padding-top: 10px;
+			align-self: center;
+			float: right;
+			.btn:not(:last-child) {
+				margin-right: 15px;
+			}
+		}
+		.heading2 {
+			color: $dark3;
+			font-size: 30px;
+		}
+	}
+	&--header {
+		display: flex;
+		padding: 20px;
+		width: 100%;
+		box-shadow: 0 5px 20px 2px rgba(0,0,0,0.06);
+		align-items: center;
+		justify-content: space-between;
+		&:last-child {
+			box-shadow: none;
+		}
+	}
+	&--content {
+		float: left;
+		padding: 37px 40px 36px;
+		width: 100%;
+	    transition-property: all;
+	    transition-duration: .35s;
+	    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	    display: block;
+		& > *:first-child {
+			margin-top: 0;
+		}
+		h3 {
+			float: left;
+			clear: both;
+			margin: 40px 0 20px;
+			width: 100%;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+.dropdown-toggle {
+	font-weight: normal;
+	font-size: 15px;
+}
+.vertical-side-nav {
+	display: flex;
+	flex-direction: column;
+	&--item {
+		padding: 20px;
+		border-bottom: 1px solid #e9eaea;
+		color: $dark1;
+		text-decoration: none;
+		font-size: 16px;
+	}
+	& > :last-child {
+		border-bottom: 0;
+	}
+	&--item-active {
+		color: $dark3;
+	}
+}
+.navbar--icon-btns li {
+	display: flex;
+	padding: 0 10px;
+	height: 42px;
+}

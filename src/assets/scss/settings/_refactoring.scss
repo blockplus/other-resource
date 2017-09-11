@@ -1,0 +1,31 @@
+
+%refactoring {
+    outline: red 1px solid;
+}
+
+
+.selectric {
+    @extend %refactoring;
+}
+
+// typography refactoring
+h1:not(.heading1),
+h2:not(.heading2),
+h3:not(.heading3),
+h4:not(.heading4),
+p:not(.paragraph),
+.heading1:not(h1),
+.heading2:not(h2),
+.heading3:not(h3),
+.heading4:not(h4),
+.paragraph:not(p) {
+    @extend %refactoring;
+}
+
+img:not([src]) {
+    box-shadow: none;
+    border: 0;
+    outline: none;
+    display: block;
+    background: url(assets/images/illustration_placeholder.jpg);
+}

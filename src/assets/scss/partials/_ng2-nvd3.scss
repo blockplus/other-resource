@@ -1,0 +1,37 @@
+// Styles for the points
+.nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
+	fill-opacity: 1;
+	stroke-opacity: 1;
+}
+
+.nv-y .tick {
+	& line {
+		display: none;
+	}
+	& text {
+		display: none;
+	}
+}
+
+.nv-x .tick {
+	& text {
+		display: none;
+	}
+}
+
+.nv-axisMaxMin {
+	display: none;
+}
+
+.nvd3 .nv-axis path.domain {
+	opacity: 0;
+}
+
+// Styles for the lines
+.nv-line {
+
+}
+
+.nv-series {
+	display: none;
+}

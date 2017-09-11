@@ -1,0 +1,122 @@
+$spacing: 32px;
+$br: 4px;
+
+$shadow: 0 4px 16px 4px rgba(0,0,0,0.04);
+
+$transition: .2s ease;
+
+/* # =================================================================
+   # Colors
+   # ================================================================= */
+
+    // product colours
+    $brand: rgb(96, 155, 183);
+    $public: rgb(114, 186, 138);
+    /* remove once body tags are fixed */ $customer: rgb(114, 186, 138);
+    $partner: rgb(208, 201, 120);
+    $networks: rgb(110, 121, 209);
+    $things: rgb(205, 123, 110);
+
+    $products: (
+        brand: $brand,
+        /* remove once body tags are fixed */ customer: $customer,
+        public: $public,
+        partner: $partner,
+        networks: $networks,
+        things: $things
+    );
+        
+    // interface colours
+    $darkest: rgb(44, 50, 53);
+    $success: rgb(68, 184, 90);
+    $warning: rgb(195, 133, 44);
+    $danger: rgb(196, 75, 73);
+
+    $interface: (
+        darkest: $darkest,
+        success: $success,
+        warning: $warning,
+        danger: $danger
+    );
+
+    $white: #fff;
+    $black: #000;
+
+    $variations: (
+        w: $white,
+        b: $black,
+    );
+
+/*  To achieve needed colour shade we use transperency 
+    (2%, 4%, 8%, 16%, 32%, 64% or 96%) to the colour and overlay it 
+    on top of /white or /black colour.
+*/
+
+    @mixin colour($attribute, $color, $background) {
+        $percent: alpha($color) * 100%;
+        $opaque: opacify($color, 1);
+        $solid-color: mix($opaque, $background, $percent);
+        #{$attribute}: $solid-color;
+    }
+
+/*  Usage:
+    @include colour('background-color', rgba($brand, 0.02), white);
+*/
+
+    @each $product, $color in $products {
+        .body_#{$product} {
+            .rc {
+                &:hover {
+                    .rc--state {
+                        @include colour('background-color', rgba($color, 0.16), white);
+                    }
+                }
+                input[type="radio"]:checked ~ .rc--state {
+                    @include colour('background-color', rgba($color, 0.16), white);
+                    &:after {
+                        @include colour('background-color', rgba($color, .96), white);
+                    }
+                }
+            }
+        }
+    }
+
+    @each $color, $value in $interface {
+        @each $variation, $variation_color in $variations {
+
+            $sufix: #{$variation};
+
+            $i: 2;
+            @while $i < 100 {
+                $opacity: $i/100;
+                .u-c_#{$color}_#{$i}_#{$sufix} { @include colour('color', rgba($value, $opacity), $variation_color); }
+                .u-f_#{$color}_#{$i}_#{$sufix} { @include colour('fill', rgba($value, $opacity), $variation_color); }
+                $i: $i*2;
+            }
+            .u-c_#{$color}_96_#{$sufix} { @include colour('color', rgba($value, .96), $variation_color); }
+        }
+    }
+
+/* # =================================================================
+   # Spacings
+   # ================================================================= */
+
+   $spacings:   2,4,8,16,32,64,96;
+
+   $properties: (margin, m),
+                (padding, p);
+
+   $sides:      (top, t),
+                (right, r),
+                (bottom, b),
+                (left, l);
+
+   @each $space in $spacings {
+       @each $property, $property_short in $properties {
+           @each $side, $side_short in $sides {
+               .u-#{$property_short}#{$side_short}_#{$space}{ 
+                   #{$property}-#{$side}: $space + px + '!important';
+               }
+           }
+       }
+   }

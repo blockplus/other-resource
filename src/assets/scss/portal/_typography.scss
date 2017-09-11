@@ -1,0 +1,86 @@
+body {
+    font-family: 'AvenirNext';
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 300;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: .5px;
+    &.reward {
+        font-weight: 600;
+    }
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    line-height: 32px;
+}
+
+.paragraph {
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    float: left;
+    padding: 0 30px;
+    &_l {
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        line-height: 24px;
+    }
+    a,
+    label {
+        opacity: .64;
+        font-weight: 600;
+        text-decoration: none;
+        &:active,
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
+    &_dark {
+        color: rgba(0,0,0,0.64);
+    }
+    .container & {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.errorText {
+    display: block;
+    clear: both;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.password {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(0,0,0,0.64);
+    letter-spacing: 0.2px;
+    padding: 20px 30px 18px;
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.network {
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(0,0,0,0.64);
+    letter-spacing: 0.2px;
+}

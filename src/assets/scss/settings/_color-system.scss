@@ -1,0 +1,163 @@
+// color themes map
+$themes: (
+    customer: (
+        color1: $guest1,
+        color2: $guest2,
+        color3: $guest3,
+        color4: $guest4,
+        color5: $guest5
+    ),
+    partner: (
+        color1: $partner1,
+        color2: $partner2,
+        color3: $partner3,
+        color4: $partner4,
+        color5: $partner5
+    ),
+    admin: (
+        color1: $airfy1,
+        color2: $airfy2,
+        color3: $airfy3,
+        color4: $airfy4,
+        color5: $airfy5
+    )
+);
+
+@each $theme, $color in $themes {
+    .body_#{$theme} {
+        .adminWrap--border,
+        .adminWrap--header {
+            background-color: map-get($color, color1);
+        }
+        .adminWrap--header .icon-back {
+            path {
+                fill: $airfy4;
+            }
+            &:hover {
+                path {
+                    fill: $airfy5;
+                }
+            }
+        }
+        .sideNav--logo-icon {
+            fill: map-get($color, color3);
+        }
+        .sideNav_colorPrimary   { fill: $dark1 };
+        .sideNav_colorSecondary { fill: $bright3 };
+        .sideNav--item-link {
+            &:hover,
+            &:focus,
+            &.active {
+                .sideNav_colorPrimary   { fill: map-get($color, color3) };
+                .sideNav_colorSecondary { fill: $white };
+            }
+        }
+        .sideNav--item-notif,
+        .sideNav--item-icon::after {
+            background-color: map-get($color, color3);
+        }
+        .btn_section {
+            background-color: map-get($color, color3);
+            border: 1px solid map-get($color, color3);
+            color: $white;
+            &:hover {
+                background-color: map-get($color, color4);
+                border-color: map-get($color, color4);
+                box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.06);
+            }
+            &:active {
+                background-color: map-get($color, color3);
+                border-color: map-get($color, color4);
+                box-shadow: none;
+            }
+            &.btn_stroke {
+                color: map-get($color, color3);
+                &:hover {
+                    color: map-get($color, color4);
+                }
+            }
+            &.btn_icon {
+                path {
+                    fill: map-get($color, color1);
+                }
+            }
+        }
+        .btn_white:not(.btn_stroke) {
+            color: map-get($color, color1);
+            &:hover {
+                color: map-get($color, color2);
+                box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.06);
+            }
+        }
+        .input-wrap {
+          &.active {
+            .placeholder {
+              color: map-get($color, color3);
+            }
+
+            input:not(:focus):not(:hover) {
+              & ~ .placeholder {
+                color: map-get($color, color2);
+              }
+            }
+          }
+
+          .input-text {
+            &:focus,
+            &:hover {
+              border-color: map-get($color, color3);
+            }
+          }
+
+          .selectric {
+            &-hover,
+            &-open {
+              .selectric {
+                border-color: map-get($color, color3);
+              }
+            }
+
+            &-wrapper {
+              &.changed {
+                .placeholder {
+                  color: map-get($color, color3);
+                }
+
+                &:not(.selectric-hover) {
+                  .placeholder {
+                    color: map-get($color, color1);
+                  }
+                }
+              }
+
+              &.selectric-open {
+                .placeholder {
+                  color: map-get($color, color3) !important;
+                }
+              }
+            }
+
+            &-items {
+              li {
+                &.highlighted,
+                &.selected,
+                &:hover {
+                  color: map-get($color, color3);
+                }
+              }
+            }
+          }
+        }
+        .u-f_section-c1 { fill: map-get($color, color1) }
+        .u-f_section-c2 { fill: map-get($color, color2) }
+        .u-f_section-c3 { fill: map-get($color, color3) }
+        .u-f_section-c4 { fill: map-get($color, color4) }
+        .u-f_section-c5 { fill: map-get($color, color5) }
+
+        .u-c_section-c1 { color: map-get($color, color1) }
+        .u-c_section-c2 { color: map-get($color, color2) }
+        .u-c_section-c3 { color: map-get($color, color3) }
+        .u-c_section-c4 { color: map-get($color, color4) }
+        .u-c_section-c5 { color: map-get($color, color5) }
+    }
+}

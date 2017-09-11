@@ -1,0 +1,215 @@
+/*
+
+    form elements are usually wrapped inside their label, 
+    which hold the .f--wrapper class. example:
+    <label class="f--wrapper">
+        <input type="" class="f--text">
+    </label>
+
+*/
+
+%inputtext_default {
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+    @include colour('color', rgba($darkest, 0.32), white);
+}
+
+%placeholder_up {
+    transform: translate(12px, -6px);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    line-height: 16px;
+    z-index: 20;
+    text-transform: uppercase;
+    &:before {
+        background-color: $white;
+    }
+}
+
+.f {
+    &--placeholder,
+    &--element {
+        transition: all $transition;
+    }
+    &--wrapper {
+        width: 100%;
+        position: relative;
+        &.is-hover {
+            .f {
+                &--element {
+                    @include colour('border-color', rgba($brand, .96), white);
+                }
+                &--placeholder {
+                    @include colour('color', rgba($darkest, 0.64), white);
+                }
+            }
+        }
+        &.is-active {
+            .f {
+                &--element {
+                    @include colour('border-color', rgba($brand, .96), white);
+                    @include colour('color', rgba($darkest, .96), white);
+                }
+                &--placeholder {
+                    @include colour('color', rgba($brand, .96), white);
+                    @extend %placeholder_up;
+                }
+            }
+        }
+        &.is-content {
+            .f {
+                &--element {
+                    @include colour('color', rgba($darkest, .96), white);
+                }
+                &--placeholder {
+                    @include colour('color', rgba($brand, .64), white);                    
+                    @extend %placeholder_up;
+                }
+            }
+        }
+        &.is-error {
+            .f {
+                &--element {
+                    color: $danger;
+                }
+                &--placeholder {
+                    @include colour('color', rgba($brand, .64), white);                    
+                    @extend %placeholder_up;
+                }
+                &--notif {
+                    display: block;
+                }
+            }
+        }
+        &.is-disabled {
+            .f {
+                &--element {
+                    @include colour('background-color', rgba($darkest, 0.04), white);
+                    @include colour('border-color', rgba($darkest, 0.16), white);
+                }
+                &--placeholder {
+                    z-index: 20;
+                    color: rgba($darkest, .16);
+                }
+            }
+        }
+    }
+    &--placeholder {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        transform: translate(12px, 12px);
+        z-index: 5;
+        @extend %inputtext_default;
+        white-space: nowrap;
+        &:before {
+            content: '';
+            width: calc(100% + #{$spacing}/4);
+            height: 16px;
+            display: block;
+            position: absolute;
+            margin-left: -$spacing/8;
+            z-index: -1;
+        }
+    }
+    &--element {
+        display: block;
+        width: 100%;
+        min-height: 48px;
+        outline: none;
+        padding: 11px 12px;
+        background-color: transparent;
+        z-index: 10;
+        @include colour('border-color', rgba($darkest, 0.32), white);
+        @extend %inputtext_default;
+        border-radius: $br;
+        border-width: 1px;
+        border-style: solid;
+        position: relative;
+        resize: none;
+        @include placeholder {
+            opacity: 0;
+            font-size: 1px;
+        }
+        &_textarea {
+            height: 104px;
+            padding-bottom: 24px;
+        }
+        &-counter {
+            position: absolute;
+            bottom: 4px;
+            right: 12px;
+            display: block;
+            opacity: 0.32;
+            font-weight: 600;
+            font-size: 10px;
+            color: #2C3235;
+            letter-spacing: 0.2px;
+            line-height: 16px;
+        }
+    }
+    &--notif {
+        display: block;
+        width: $spacing/2;
+        height: $spacing/2;
+        background-color: $white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        path {
+            @include colour('fill', rgba($danger, .96), white);
+        }
+        app-icon,
+        svg {
+            display: block;
+            width: 8px;
+            height: 8px;
+        }
+        app-icon {
+            margin: 4px 0 0 4px;
+        }
+    }
+    &--visibility {
+        position: absolute;
+        padding: 20px 16px;
+        top: 0;
+        right: 0;
+        z-index: 30;
+        app-icon {
+            display: flex;
+            svg {
+                margin-right: 0;
+            }
+        }
+        & ~ .f--element {
+            padding-right: 40px;
+        }
+    }
+    &--stats {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: $spacing/4;
+        &-item {
+            flex: 1 1 0;
+            display: flex;
+            &:not(:last-child) {
+                margin-right: $spacing/2;
+            }
+        }
+        &-icon {
+            margin-right: $spacing/4;
+        }
+        &-text {
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            line-height: 16px;
+        }
+    }
+}

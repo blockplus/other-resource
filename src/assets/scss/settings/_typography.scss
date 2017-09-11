@@ -1,0 +1,140 @@
+body {
+	color: $dark3;
+	font-family: 'AvenirNext';
+    font-style: normal;
+}
+.heading1 {
+	letter-spacing: 0;
+	font-weight: 400;
+	font-size: 50px;
+	line-height: 1;
+}
+.heading2 {
+	letter-spacing: 0;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 1;
+    .subtext {
+        margin-left: 2px;
+    }
+}
+.heading3 {
+	letter-spacing: 0.2px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.25;
+	.f & {
+		margin-bottom: 16px;
+	}
+}
+.heading4 {
+	letter-spacing: 0.8px;
+	font-weight: 600;
+	font-size: 11px;
+}
+.subtext {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    line-height: 18px;
+    color: #ADAFB2;
+}
+.subtext2 {
+	font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+}
+// used in _utilities.scss
+%fontLight {
+	letter-spacing: 0.4px;
+	font-weight: 300;
+	font-style: normal;
+}
+.paragraph {
+	letter-spacing: 0.2px;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.6;
+	&_notfull {
+		width: 86.48%;
+	}
+}
+%fontBtn {
+	letter-spacing: 0.8px;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	&_link {
+		letter-spacing: 0.2px;
+		font-size: 15px;
+        text-transform: none;
+	}
+	&:not(&_link) {
+		text-transform: uppercase;
+	}
+}
+%fontInput {
+	letter-spacing: 0.2px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1;
+}
+.notes {
+	letter-spacing: 0.4px;
+	font-weight: 500;
+	font-size: 10px;
+	line-height: 1;
+}
+b,
+strong {
+	font-weight: 600;
+}
+.input-cr--text {
+	font-weight: 600;
+}
+
+.errorMessage {
+	float: left;
+	padding: 20px;
+	border: 1px solid $error;
+	border-radius: 4px;
+	background-color: rgb(252, 249, 249);
+	color: $error;
+	letter-spacing: 0.2px;
+	font-size: 13px;
+	line-height: 22px;
+	span {
+		display: inline;
+	}
+	.btn_link {
+		color: #cc9595;
+		font-size: inherit;
+		&:hover {
+			color: $error;
+		}
+	}
+}
+.additional {
+	margin-top: 20px;
+	color: $dark1;
+	letter-spacing: 0.2px;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 22px;
+}
+
+.label {
+	display: block;
+	width: 60px;
+	height: 18px;
+	border-radius: 4px;
+	text-align: center;
+	letter-spacing: 0.8px;
+	font-weight: 500;
+	font-size: 10px;
+	line-height: 18px;
+	&_green {
+		background: rgba(39,141,90,.10);
+		color: #44b85a;
+	}
+}

@@ -1,0 +1,29 @@
+.emptySection {
+    display: block;
+    margin: 60px auto;
+    padding: 60px;
+    width: 440px;
+    border-radius: 4px;
+    background: #F8F8F8;
+    text-align: center;
+    color: $dark3;
+    &_light {
+        color: $dark1;
+    }
+    strong {
+        display: block;
+        margin-bottom: 20px;
+        color: inherit;
+        text-align: center;
+        letter-spacing: 0.2px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    p {
+        color: inherit;
+        text-align: center;
+        letter-spacing: 0.2px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

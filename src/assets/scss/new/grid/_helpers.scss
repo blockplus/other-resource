@@ -1,0 +1,237 @@
+
+// --------------------------------------------------
+// g modifiers
+// --------------------------------------------------
+
+// --------------------------------------------------
+// g full bleed (no internal padding)
+// --------------------------------------------------
+.#{$reflex-prefix}g--bleed {
+    [class*="#{$reflex-prefix}g--col-"] {
+        padding: 0;
+    }
+}
+
+// --------------------------------------------------
+// flex-wrap
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--wrap {
+    @include flex-wrap(wrap);
+}
+
+.#{$reflex-prefix}g--no-wrap {
+    @include flex-wrap(nowrap);
+}
+
+.#{$reflex-prefix}g--wrap-reverse {
+    @include flex-wrap(wrap-reverse);
+}
+
+// --------------------------------------------------
+// flex-direction
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--direction-row {
+    @include flex-direction(row);
+}
+
+.#{$reflex-prefix}g--direction-row-reverse {
+    @include flex-direction(row-reverse);
+}
+
+.#{$reflex-prefix}g--direction-column {
+    @include flex-direction(column);
+}
+
+.#{$reflex-prefix}g--direction-column-reverse {
+    @include flex-direction(column-reverse);
+}
+
+// --------------------------------------------------
+// align-g--col-cells (cross axis)
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--align-start {
+    @include align-items(flex-start);
+}
+
+.#{$reflex-prefix}g--align-end {
+    @include align-items(flex-end);
+
+    // fallback to legacy vertical-align
+    [class*="#{$reflex-prefix}g--col-"] {
+        vertical-align: bottom;
+    }
+}
+
+.#{$reflex-prefix}g--align-center {
+    @include align-items(center);
+
+    // fallback to legacy vertical-align
+    [class*="#{$reflex-prefix}g--col-"] {
+        vertical-align: middle;
+    }
+}
+
+.#{$reflex-prefix}g--align-baseline {
+    @include align-items(baseline);
+
+    // fallback to legacy vertical-align
+    [class*="#{$reflex-prefix}g--col-"] {
+        vertical-align: baseline;
+    }
+}
+
+// --------------------------------------------------
+// align-content (cross axis)
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--align-content-start {
+    @include align-content(flex-start);
+}
+
+.#{$reflex-prefix}g--align-content-end {
+    @include align-content(flex-end);
+
+    // fallback to legacy vertical-align
+    [class*="#{$reflex-prefix}g--col-"] {
+        vertical-align: bottom;
+    }
+}
+
+.#{$reflex-prefix}g--align-content-center {
+    @include align-content(center);
+}
+
+.#{$reflex-prefix}g--align-content-space-between {
+    @include align-content(space-between);
+}
+
+.#{$reflex-prefix}g--align-content-space-around {
+    @include align-content(space-around);
+}
+
+
+
+// --------------------------------------------------
+// align-self
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--align-self-stretch {
+    @include align-self(stretch);
+}
+
+.#{$reflex-prefix}g--align-self-start {
+    @include align-self(flex-start);
+}
+
+.#{$reflex-prefix}g--align-self-end {
+    @include align-self(flex-end);
+    vertical-align: bottom;
+}
+
+.#{$reflex-prefix}g--align-self-center {
+    @include align-self(center);
+    vertical-align: middle;
+}
+
+.#{$reflex-prefix}g--align-self-baseline {
+    @include align-self(baseline);
+    vertical-align: baseline;
+}
+
+// --------------------------------------------------
+// justify-content (main axis)
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--justify-start {
+    @include justify-content-start();
+}
+
+.#{$reflex-prefix}g--justify-end {
+    @include justify-content-end();
+
+    .#{$reflex-prefix}g--cell,
+    [class*="#{$reflex-prefix}g--col-"] {
+        @include resetTextAlign();
+    }
+}
+
+.#{$reflex-prefix}g--justify-center {
+    @include justify-content-center();
+
+    .#{$reflex-prefix}g--cell,
+    [class*="#{$reflex-prefix}g--col-"] {
+        @include resetTextAlign();
+    }
+}
+
+.#{$reflex-prefix}g--justify-space-between {
+    @include justify-content-space-between();
+
+    .#{$reflex-prefix}g--cell,
+    [class*="#{$reflex-prefix}g--col-"] {
+        @include resetTextAlign();
+    }
+}
+
+.#{$reflex-prefix}g--justify-space-around {
+    @include justify-content-space-around();
+
+    .#{$reflex-prefix}g--cell,
+    [class*="#{$reflex-prefix}g--col-"] {
+        @include resetTextAlign();
+    }
+}
+
+// --------------------------------------------------
+// g--col modifiers
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--col--bleed {
+    padding: 0;
+}
+
+.#{$reflex-prefix}g--col--bleed-x {
+    padding: $reflex-cell-spacing 0;
+}
+
+.#{$reflex-prefix}g--col--bleed-y {
+    padding: 0 $reflex-cell-spacing;
+}
+
+.#{$reflex-prefix}g--col--bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 50%;
+}
+
+// --------------------------------------------------
+// g--cell modifiers
+// --------------------------------------------------
+
+
+.#{$reflex-prefix}g--cell-img {
+    display: block;
+    @include display-flex-only();
+    @include flex(0, 0, auto);
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.#{$reflex-prefix}g--cell-footer {
+    @include display-flex();
+    width: 100%;
+    margin-top: auto;
+}
+
+// --------------------------------------------------
+// Responsive visibility modifiers
+// --------------------------------------------------
+
+@include responsive-visibility-helpers();

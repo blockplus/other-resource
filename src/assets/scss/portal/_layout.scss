@@ -1,0 +1,16 @@
+
+html {
+
+}
+body {
+}
+.wrapper {
+    max-width: calc(100% - 40px);
+    &--inner {
+        max-width: 730px;
+    }
+    &, &--inner {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

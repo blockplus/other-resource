@@ -1,0 +1,115 @@
+.ui-datepicker {
+    position: absolute;
+    padding: 8px 9px;
+    width: 236px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px 2px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    user-select: none;
+    * {
+        font-family: "AvenirNext";
+    	font-weight: 500;
+    }
+    a {
+        text-decoration: none;
+    }
+    &-prev,
+    &-next {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgPHJlY3Qgd2lkdGg9IjgiIGhlaWdodD0iOCIvPiAgICA8cGF0aCBmaWxsPSIjOTU5ODlBIiBkPSJNMS45NzAyMDE2NywzLjQzODMxOTk2IEwzLjY1Njk4OTczLDEuNzQ2ODIwMiBDMy44NTM0ODcwOCwxLjU0OTc3Mzk3IDMuODQ5OTgxMzIsMS4yMjcyMzgxIDMuNjQ4MjAxLDEuMDI1NDU3NzcgTDMuNTcyODc5MjksMC45NTAxMzYwNjQgQzMuMzcxNTI4MDUsMC43NDg3ODQ4MjUgMy4wNDMxODcwMiwwLjc1MDY3MDk5OCAyLjg0MTk0NTk0LDAuOTUxOTEyMDc2IEwwLjE1MTM0MDIxOSwzLjY0MjUxNzggQy0wLjA1MDk5MTg4MzQsMy44NDQ4NDk5IC0wLjA0OTkwMDg1ODgsNC4xNzM5ODYwOCAwLjE1MTM0MDIxOSw0LjM3NTIyNzE2IEwyLjg0MTk0NTk0LDcuMDY1ODMyODggQzMuMDQ0Mjc4MDQsNy4yNjgxNjQ5OCAzLjM3MTA5ODk2LDcuMjY5Mzg5MjIgMy41NzI4NzkyOSw3LjA2NzYwODg5IEwzLjY0ODIwMSw2Ljk5MjI4NzE4IEMzLjg0OTU1MjIzLDYuNzkwOTM1OTQgMy44NTI1MDE5OSw2LjQ2Njk4MzE0IDMuNjU2OTg5NzMsNi4yNzA5MjQ3NSBMMS45NzAyMDE2Nyw0LjU3OTQyNDk5IEw3LjQ5Njc3OTc3LDQuNTc5NDI0OTkgQzcuNzc0NTE2MDEsNC41Nzk0MjQ5OSA4LjAwMDk0MTczLDQuMzU5NDA4NDYgNy45OTk5OTcwNSw0LjA2MjI5MjEzIEw3Ljk5OTk5NzA1LDMuOTU1NDUyODMgQzguMDAwOTQxNzMsMy42Njk4NDgyMyA3Ljc2NzcwMDUyLDMuNDM4MzE5OTYgNy40OTY3Nzk3NywzLjQzODMxOTk2IEwxLjk3MDIwMTY3LDMuNDM4MzE5OTYgWiIvPiAgPC9nPjwvc3ZnPg==);
+        position: absolute;
+        top: 2px;
+        width: 1.8em;
+        height: 1.8em;
+        span {
+            display: none;
+        }
+    }
+    &-prev {
+        background-position: top 3px left;
+        left: 0;
+    }
+    &-next {
+        transform: rotate(180deg);
+        background-position: bottom 3px left;
+        right: 0;
+    }
+    &-title {
+        font-size: 11px;
+        color: $dark3;
+        text-align: center;
+        margin: 2px 0;
+    }
+    &-header {
+        padding: 0;
+        position: relative;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 0 2px;
+    }
+    td {
+        border: 0;
+        padding: 1px;
+    }
+    th {
+        padding: 7px 0 4px;
+        text-align: center;
+        font-weight: bold;
+        border: 0;
+        font-size: 8px;
+        color: $dark1;
+    }
+    a.ui-state-default {
+        border-radius: 2px;
+        background-color: $bright2;
+        color: $dark1;
+        font-size: 11px;
+        width: 28px;
+        height: 23px;
+        border: 0;
+        box-shadow: none;
+        line-height: 21px;
+        display: block;
+        padding: 2px 6px 0 0;
+        transition: color .3s;
+        &:hover {
+            color: $airfy3;
+        }
+    }
+    a.ui-state-active {
+        background-color: $airfy3;
+        color: $white !important;
+    }
+    .ui-state-disabled {
+        padding: 0;
+        height: 0;
+        a.ui-state-default {
+            opacity: 0;
+            pointer-events: none;
+            cursor: default;
+            padding: 0;
+            height: 0;
+        }
+    }
+}
+
+.ui-calendar {
+    position: relative;
+    display: inline-block;
+}
+.ui-inputtext {
+    margin: 0;
+    padding: 4px;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    width: 100px;
+    font-family: "AvenirNext";
+	font-weight: 500;
+    font-size: 15px;
+    color: $dark1;
+    letter-spacing: 0.4px;
+    box-shadow: none;
+}

@@ -1,0 +1,113 @@
+.greyBlock {
+    width: 100%;
+    background: #F8F8F8;
+    border-radius: 4px;
+    float: left;
+    padding: 20px;
+    max-width: 340px;
+    position: relative;
+    text-align: left;
+    &.half {
+        &:not(:first-child):not(:nth-child(2)) {
+            margin-top: 20px;
+        }
+    }
+    &_profile {
+        .profile {
+            h4 {
+                margin-bottom: 20px;
+            }
+            &Image {
+                float: left;
+                width: 80px;
+                position: relative;
+                .partner-logo {
+                    background: $white;
+                    background: rgb(232,240,248);
+                    border: 1px solid $white;
+                    border-radius: 4px;
+                    position: absolute;
+                    width: 30px; height: 30px;
+                    overflow: hidden;
+                    top: -10px; left: -10px;
+                    z-index: 20;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    user-select: none;
+                    img {
+                        display: block;
+                        width: auto;
+                        height: auto;
+                    }
+                }
+            }
+            &Details {
+                float: left;
+                width: calc(100% - 80px);
+                h5 {
+                    font-weight: 400;
+                    font-size: 15px;
+                    color: $dark1;
+                    letter-spacing: 0.2px;
+                    width: 100%;
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+    &_simple {
+        margin-bottom: 40px;
+        h4 {
+            margin-bottom: 0 !important;
+        }
+        p {
+            color: $dark1;
+            width: 100%;
+            min-width: 100%;
+            float: left;
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+    }
+    h4 {
+        font-weight: 500;
+        font-size: 16px;
+        color: $dark3;
+        letter-spacing: 0.2px;
+        line-height: 20px;
+        float: left;
+        margin-bottom: 0;
+    }
+    &--row {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+        &Left,
+        &Right {
+            display: block;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0.8px;
+            line-height: 14px;
+        }
+        &Left {
+            float: left;
+            color: $dark3;
+            text-transform: uppercase;
+        }
+        &Right {
+            float: right;
+            color: $dark1;
+        }
+    }
+
+    &--icon {
+        position: absolute;
+        width: 16px; height: 16px;
+        top: 16px;
+        right: 20px;
+    }
+
+}

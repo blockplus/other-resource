@@ -1,0 +1,16 @@
+.inContextPopup {
+    width: 400px;
+    position: absolute;
+    background: $white;
+    box-shadow: 0 5px 20px 2px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    padding: 20px;
+    overflow: hidden;
+    z-index: $z-index-inContextPopup;
+    &--holder {
+        position: relative;
+        width: 1px; 
+        height: 1px;
+        display: inline-block;
+    }
+}

@@ -1,0 +1,98 @@
+// --------------------------------------------------
+// reflex g
+// --------------------------------------------------
+
+.#{$reflex-prefix}g {
+    @include display-flex();
+    @include flex-wrap();
+    padding: 0;
+    margin: -$spacing/4;
+    position: relative;
+    width: 100%;
+    max-width: $reflex-max-width;
+
+    @include setupWhitespace();
+
+    &:before,
+    &:after {
+        @include resetWhitespace();
+        max-width: 100%;
+    }
+
+    *:before,
+    *:after {
+        @include resetWhitespace();
+    }
+
+    // handle nested gs
+    & .#{$reflex-prefix}g {
+        @include flex(1, 1, auto);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    // Reset the box-sizing so our g works properly
+    * {
+        @include box-sizing(border-box);
+    }
+    *:before,
+    *:after {
+        @include box-sizing(border-box);
+    }
+
+    // handle when lists are used as a g
+    list-style-type: none;
+
+    &--row {
+        &:not(:last-child) {
+            margin-bottom: $spacing/4;
+        }
+    }
+
+}
+
+// --------------------------------------------------
+// reflex g--col defaults
+// --------------------------------------------------
+
+[class*="#{$reflex-prefix}g--col-"] {
+    @include setupCols();
+}
+
+// --------------------------------------------------
+// reflex g--cell defaults
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--cell {
+    position: relative;
+    display: block;
+    @include flex(1, 1, auto);
+}
+
+// ie11 hack
+:-ms-fullscreen, :root {
+    .g--cell {
+        width: 100%;
+    }
+}
+
+// --------------------------------------------------
+// reflex g generation
+// --------------------------------------------------
+
+@include make-reflex-g(g--col-);
+
+
+// --------------------------------------------------
+// reflex g--col-auto
+// --------------------------------------------------
+
+.#{$reflex-prefix}g--col-auto {
+    @include setupAutoCols();
+}
+
+// --------------------------------------------------
+// reflex order helpers generation
+// --------------------------------------------------
+
+@include make-g--order-helpers();

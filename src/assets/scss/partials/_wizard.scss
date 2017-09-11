@@ -1,0 +1,65 @@
+.modal_wizard {
+    background-color: #2C3235;
+    .modal {
+        &_medium {
+            text-align: center;
+            max-width: 672px;
+            margin-top: 44px;
+            h2 {
+                font-weight: 400;
+                font-size: 32px;
+                color: #2C3235;
+                letter-spacing: 0px;
+                line-height: 48px;
+                margin-bottom: 34px;
+            }
+            .form-row {
+                margin: 0 auto;
+                width: 51.7%;
+            }
+            .input-wrap .input-text {
+                padding: 13px 11px 11px;
+            }
+            .form-row--item {
+                margin-bottom: 16px;
+            }
+        }
+        &--inner {
+            padding: 30px;
+        }
+        &--logo {
+            user-select: none;
+            max-width: 160px;
+            margin: 0 auto 32px;
+            display: block;
+            width: auto;
+            height: 35px;
+        }
+        .btn {
+            &.btn_l {
+                background-color: $airfy3;
+                border: 1px solid $airfy3;
+                color: $white;
+                &:hover {
+                    background-color: $airfy4;
+                    border-color: $airfy4;
+                    box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.06);
+                }
+                &:active {
+                    background-color: $airfy3;
+                    border-color: $airfy4;
+                    box-shadow: none;
+                }   
+            }
+            &--wrap {
+                margin-top: 16px;
+            }
+        }
+    }
+    .subtext2 {
+        color: #FFFFFF;
+        font-weight: 400;
+        margin-top: 16px;
+        display: block;
+    }
+}

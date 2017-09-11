@@ -1,0 +1,110 @@
+.icon {
+    &_circle {
+        background: rgba(44,50,52,0.10);
+        min-width: 32px; min-height: 32px;
+        max-width: 32px; max-height: 32px;
+        flex: 0 1 1;
+        border-radius: 50%;
+        position: relative;
+        display: inline-block;
+        &:before {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &_blue {
+            background-color: rgba(95,155,183,0.10);
+        }
+        &_red {
+            background-color: rgba(195,75,73,0.10);
+        }
+        &_green {
+            background-color: rgba(68,184,90,0.10);
+        }
+        &_s {
+            min-width: 16px; min-height: 16px;
+            max-width: 16px; max-height: 16px;
+        }
+    }
+
+    &-number-circle {
+        position: relative;
+        background: rgba(195,75,73,0.10);
+        width: 16px; height: 16px;
+        display: inline-block; border-radius: 50%;
+        color: #c44b49;
+        font-size:11px;
+        font-weight:bold;
+        padding-left: 4px;
+        line-height: 16px;
+        font-style: normal;
+        padding-top: 1px;
+    }
+
+    &-number {
+        background: $bright2;
+        border-radius: 2px;
+        font-weight: 500;
+        font-size: 11px;
+        color: $dark1;
+        letter-spacing: 0.8px;
+        line-height: 14px;
+        padding: 1px 3px;
+        user-select: none;
+    }
+
+    &-plus {
+        cursor: pointer;
+        &:hover {
+            rect {
+                stroke: $dark1;
+            }
+            path {
+                fill: $dark3;
+            }
+        }
+        h3 & {
+            display: flex;
+            float: left;
+            position: relative;
+            top: 2px;
+        }
+  }
+  &-signal {
+    display: flex;
+    width: 16px;
+    height: 16px;
+  }
+  &-visibility {
+      &_on {
+        width: 8px;
+        height: 6px;
+      }
+      &_off {
+        width: 8px;
+        height: 8px;
+      }
+  }
+}
+
+svg {
+    width: 16px;
+    height: 16px;
+    path,
+    rect {
+        transition: all .3s ease;
+    }
+}
+
+
+.icon-grabber {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    &:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+    }
+}
